@@ -1,0 +1,120 @@
+.cloud {
+	position: relative;
+	background-color: #e1e6e4;
+	padding: 180px 0px 60px 0px;
+	background-image: url(../../img/cloud-bg.png);
+	background-repeat: no-repeat;
+	background-position: top 180px right;
+	@media (max-width: $md1+px) {
+		background-position: bottom 15% right -200px;
+	}
+
+	@media (max-width: $md3+px) {
+		background-image: none;
+		padding: 100px 0px 30px 0px;
+	}
+
+	// .cloud__title
+
+	&__title {
+		max-width: 684px;
+		margin-bottom: 24px;
+		@media (max-width: $md2+px) {
+			font-size: 40px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 30px;
+			line-height: 130%;
+			width: 100%;
+		}
+	}
+	&__btn {
+		background: #ffffff;
+		box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+		border-radius: 5px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 120%;
+		text-align: center;
+		letter-spacing: 0.045em;
+		padding: 14px 34px;
+		color: #288dec;
+	}
+	&__img {
+		position: relative;
+		display: none;
+		height: 525px;
+		img {
+			position: absolute;
+			right: -10px;
+			width: 100%;
+			height: 100%;
+			object-fit: fill;
+		}
+
+		@media (max-width: $md3+px) {
+			display: block;
+			height: 425px;
+			margin-bottom: 15px;
+		}
+	}
+
+	// .cloud__description
+
+	&__description {
+		font-size: 24px;
+		line-height: 120%;
+		letter-spacing: 0.045em;
+		color: #006464;
+		max-width: 566px;
+		margin-bottom: 70px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+			line-height: 120%;
+			margin-bottom: 40px;
+			max-width: 420px;
+		}
+		margin-bottom: 70px;
+		@media (max-width: $md3+px) {
+			font-size: 16px;
+		}
+	}
+
+	// .cloud__list
+
+	&__list {
+	}
+
+	// .cloud__list-item
+
+	&__list-item {
+		position: relative;
+		font-size: 24px;
+		line-height: 120%;
+		letter-spacing: 0.045em;
+		color: #006464;
+		margin-bottom: 24px;
+		padding-left: 16px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+			line-height: 110%;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 16px;
+			font-weight: 500;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 10px;
+			border-radius: 25px;
+			width: 8px;
+			height: 8px;
+			background-color: #13c3bd;
+			@media (max-width: $md2+px) {
+				top: 5px;
+			}
+		}
+	}
+}

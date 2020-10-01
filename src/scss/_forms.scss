@@ -1,0 +1,111 @@
+$sel-color-title: #000000;
+$sel-title-border: none;
+$sel-background-title: transparent;
+$sel-borderRadius-title: 4px;
+$sel-fontSize-title: 18px;
+
+$sel-height-value: 30px;
+$sel-fontSize-value: 16px;
+$sel-padding-value: 0 15px;
+$sel-color-value: #006464;
+
+$sel-wight-toggle: 6px;
+$sel-height-toggle: 4px;
+$sel-transition-toggle: all 0.3s ease;
+$sel-background-toggle: url("../img/arrow.png") center/100% no-repeat;
+
+$sel-top-options: 28px;
+$sel-padding-options: 4px 0;
+$sel-fontSize-options: 14px;
+$sel-radius-options: 4px;
+$sel-background-options: #ffffff;
+$sel-color-options: #000000;
+$sel-border-options: 1px solid #d9d9d9;
+$sel-shadow-options: 0 0 7px rgba(0, 0, 0, 0.2);
+
+$sel-padding-option: 5px 15px;
+$sel-hover-option: rgba(0, 100, 100, 0.6);
+$sel-hover-color-option: #ffffff;
+
+.select {
+  position: relative;
+  // .select__item
+  &__item {
+    position: relative;
+  }
+  // .select__title
+  &__title {
+    cursor: pointer;
+    color: $sel-color-title;
+    border: $sel-title-border;
+    background-color: $sel-background-title;
+    border-radius: $sel-borderRadius-title;
+    @media (max-width: $md2+px) {
+      font-size: $sel-fontSize-title;
+    }
+  }
+  // .select__value
+  &__value {
+    color: $sel-color-value;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    font-size: $sel-fontSize-value;
+    height: $sel-height-value;
+    padding: $sel-padding-value;
+    font-weight: 500;
+
+    span {
+      overflow: hidden;
+    }
+    &:before {
+      content: "";
+      display: inline-block;
+      transition: $sel-transition-toggle;
+      width: $sel-wight-toggle;
+      height: $sel-height-toggle;
+      background: $sel-background-toggle;
+      margin-left: 4px;
+    }
+  }
+  // .select__options
+  &__options {
+    display: none;
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    z-index: 100;
+    top: $sel-top-options;
+    font-size: $sel-fontSize-options;
+    padding: $sel-padding-options;
+    border-radius: $sel-radius-options;
+    background-color: $sel-background-options;
+    border: $sel-border-options;
+    color: $sel-color-options;
+    box-shadow: $sel-shadow-options;
+  }
+  @media (max-width: $md2+px) {
+    font-size: 18px;
+  }
+  &__option {
+    cursor: pointer;
+    padding: $sel-padding-option;
+    margin: 0;
+    &:hover {
+      background-color: $sel-hover-option;
+      color: $sel-hover-color-option;
+    }
+  }
+  &._active {
+    z-index: 5;
+    .select__value {
+      &:before {
+        transform: rotate(-180deg);
+      }
+    }
+    .select__options {
+      display: block;
+    }
+  }
+}

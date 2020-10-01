@@ -1,0 +1,238 @@
+.calback {
+	background: #006464;
+	padding: 100px 0px 100px 0px;
+	text-align: center;
+	// .calback__title
+
+	&__title {
+		font-family: "Play";
+		font-weight: bold;
+		font-size: 48px;
+		line-height: 130%;
+		letter-spacing: 0.005em;
+		color: #f2f2f2;
+		margin-bottom: 16px;
+		@media (max-width: $md3+px) {
+			font-size: 30px;
+		}
+		@media (max-width: $md4+px) {
+			text-align: left;
+		}
+		span {
+			color: #13c3bd;
+		}
+	}
+
+	// .calback__subtitle
+
+	&__subtitle {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 120%;
+		text-align: center;
+		letter-spacing: 0.045em;
+		color: #e1e6e4;
+		margin-bottom: 60px;
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			text-align: left;
+		}
+	}
+}
+.input {
+	background-color: transparent;
+	border-bottom: 2px solid #f1b841;
+	margin: 0px 12px 35px 12px;
+	width: 328px;
+	font-size: 16px;
+	padding: 0px 5px 15px 15px;
+	line-height: 24px;
+	letter-spacing: 0.0015em;
+	color: #f2f2f2;
+	// .input__row
+
+	&__row {
+	}
+}
+.btn {
+	background: #f1b841;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 120%;
+	text-align: center;
+	letter-spacing: 0.045em;
+	color: #006464;
+	padding: 14px 62px;
+	margin-top: 20px;
+	@media (max-width: $md3+px) {
+		width: 100%;
+	}
+	&:active {
+		background-color: #d9960c;
+	}
+}
+.group {
+	position: relative;
+	display: inline-block;
+	margin: 0px 12px 40px 12px;
+	@media (max-width: $md3+px) {
+		width: 100%;
+		margin: 0px 0px 40px 0px;
+	}
+}
+input {
+	background-color: transparent;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.0015em;
+	color: #f2f2f2;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 330px;
+	border: none;
+	border-bottom: 1px solid #f1b841;
+	@media (max-width: $md3+px) {
+		width: 100%;
+	}
+}
+input:focus {
+	outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.0015em;
+	color: #003b3b;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #d9960c;
+}
+input:valid ~ label {
+	color: #b17909;
+	top: -20px;
+	font-size: 12px;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+	position: relative;
+	display: block;
+	width: 330px;
+}
+.bar:before,
+.bar:after {
+	content: "";
+	height: 1px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #d9960c;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+.bar:before {
+	left: 50%;
+}
+.bar:after {
+	right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+	width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	-moz-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+}
+.form {
+	@media (max-width: $md3+px) {
+		padding: 10px;
+	}
+}
+
+// /* ANIMATIONS ================ */
+// @-webkit-keyframes inputHighlighter {
+// 	from {
+// 		background: #d9960c;
+// 	}
+// 	to {
+// 		width: 0;
+// 		background: transparent;
+// 	}
+// }
+// @-moz-keyframes inputHighlighter {
+// 	from {
+// 		background: #d9960c;
+// 	}
+// 	to {
+// 		width: 0;
+// 		background: transparent;
+// 	}
+// }
+// @keyframes inputHighlighter {
+// 	from {
+// 		background: #d9960c;
+// 	}
+// 	to {
+// 		width: 0;
+// 		background: transparent;
+// 	}
+// }
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 10px 20px;
+	border: 1px solid #eeeeee;
+	&._focus {
+	}
+	&._error {
+		color: red;
+	}
+}
+.form__error {
+	// display: none;
+}
+//</FORM>====================================================================================================
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}

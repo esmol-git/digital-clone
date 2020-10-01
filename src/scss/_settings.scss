@@ -1,0 +1,151 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: $fontFamily, sans-serif;
+	z-index: 1;
+	&._lock {
+		overflow: hidden;
+		background-color: #e1e6e4;
+	}
+}
+
+.is-outer {
+	position: relative !important; // stylelint-disable-line declaration-no-important
+	left: -9999px !important; // stylelint-disable-line declaration-no-important
+}
+
+.site-container {
+	position: relative;
+	overflow: hidden;
+	max-width: 1440px;
+	margin: 0 auto;
+	z-index: 1000;
+}
+.wrapper {
+	// background-color: #e1e6e4;
+	background-color: #fff;
+
+	z-index: 999;
+}
+
+.stop-scroll {
+	@include stop-scroll;
+}
+
+.is-hidden {
+	display: none !important; // stylelint-disable-line declaration-no-important
+}
+
+.for-mobile {
+	display: none;
+
+	@include mobile {
+		display: block;
+	}
+}
+
+.error {
+	border: 2px #ff4019 solid !important; // stylelint-disable-line declaration-no-important
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+.btn-reset {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1188px;
+}
+.container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 1000px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 900px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
+}
+._tabs-block {
+	display: none;
+	&._active {
+		display: block;
+	}
+}
+
+.section {
+	min-height: 100vh;
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 70px;
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+		}
+		&--partners {
+			flex-direction: column;
+			align-items: start;
+			margin-bottom: 0;
+			@media (max-width: $md3+px) {
+				width: 100%;
+			}
+			.section__title {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	&__title {
+		font-family: "Play";
+		font-weight: 700;
+		font-size: 48px;
+		line-height: 130%;
+		letter-spacing: 0.005em;
+		color: #006464;
+		@media (max-width: $md1+px) {
+			font-size: 38px;
+			line-height: 120%;
+		}
+		@media (max-width: $md3+px) {
+			margin-bottom: 10px;
+			font-size: 32px;
+		}
+	}
+	&__description {
+		font-size: 20px;
+		line-height: 120%;
+		letter-spacing: 0.045em;
+		color: #006464;
+		flex: 0 0 59%;
+		@media (max-width: $md1+px) {
+			font-size: 18px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 16px;
+		}
+	}
+}
